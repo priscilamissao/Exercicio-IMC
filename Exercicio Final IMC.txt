@@ -1,0 +1,248 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		
+		inteiro idade, grupo=0, sexo=0
+          cadeia jovens, adultos, experts, nome
+          real mIdadeHJ=0, mPesoHJ=0, mAlturaHJ=0, mIdadeHA=0, mPesoHA=0, mAlturaHA=0, mIdadeHE=0, mPesoHE=0, 
+          mAlturaHE=0, mIdadeMJ=0, mPesoMJ=0, mAlturaMJ=0, mIdadeMA=0, mPesoMA=0, mAlturaMA=0, mIdadeME=0, mPesoME=0, mAlturaME=0, 
+          somaIdadeHJ=0, somaPesoHJ=0, somaAlturaHJ=0, somaIdadeHA=0, somaPesoHA=0, somaAlturaHA=0, somaIdadeHE=0, somaPesoHE=0, 
+          somaAlturaHE=0, somaIdadeMJ=0, somaPesoMJ=0, somaAlturaMJ=0, somaIdadeMA=0, somaPesoMA=0, somaAlturaMA=0, somaIdadeME=0,
+          somaPesoME=0, somaAlturaME=0, cont_jv_H=0, cont_ad_H=0, cont_ex_H=0, cont_jv_M=0, cont_ad_M=0, cont_ex_M=0, 
+          ac_idade_HJ=0, ac_altura_HJ=0, ac_peso_HJ=0, ac_idade_HA=0, ac_peso_HA=0, ac_altura_HA=0, ac_idade_HE=0, 
+          ac_peso_HE=0, ac_altura_HE=0, contTotal=0
+          real imc, altura, peso
+          cadeia fim
+          
+                 
+
+
+	
+		 faca
+		 {
+		faca
+		{
+		escreva ("Digite sua idade: ")
+		leia(idade)
+		
+		limpa()
+		escreva ("\nVocê precisa ter mais de 18 anos para preencher este formulário\n")
+		}
+	
+          enquanto (idade<18)
+          limpa()
+
+             
+		escreva ("Digite seu nome: ")
+		leia (nome)
+
+		escreva ("\nDigite seu peso: ")
+		leia (peso)
+		
+		escreva ("\nDigite sua altura: ")
+		leia (altura)
+
+		escreva ("Digite 1 para Feminino ou 2 para Masculino: ")
+		leia (sexo)
+
+	imc = (peso / (altura * altura)) * 10000
+	escreva (imc)
+	
+	
+	se (imc >= 18.5 e imc <= 24.9)
+	{
+	escreva ("\nParabéns seu IMC esta ok\n")
+	}
+	se (imc > 24.9)
+	{
+	escreva ("\nSeu IMC esta acima do recomendado\n")
+	}	
+	se (imc < 18.5)
+	{
+	escreva ("\nSeu IMC esta abaixo do recomendado\n")
+	}
+
+	se (idade >= 18 e idade < 32) {
+		escreva("\nJovem\n")
+			
+	}
+	senao se (idade >= 32 e idade < 61) {
+		escreva("\nAdulto\n")
+		}
+	senao {
+		escreva("\nExspert\n")
+	}
+
+		//escreva("\nGostaria de fazer uma nova pesquisa? \"s\" para sim ou \"n\" para não: ")
+	//leia (refazer)
+	//
+    	//	enquanto (refazer != "n") 
+    		
+	
+    	se ((idade >= 18) e (idade <= 32) e (sexo ==2))
+    	{
+    		grupo = 1 
+    	}
+
+	senao se ((idade >= 18) e (idade <= 32) e (sexo ==1))
+	{
+		grupo = 2
+	}
+	senao se ((idade >= 32) e (idade <= 61) e (sexo ==2))
+	{
+		grupo = 3
+	}
+
+	senao se ((idade >= 32) e (idade <= 61) e (sexo ==1))
+	{
+		grupo = 4
+	}
+	
+    	senao se ((idade >= 62) e (sexo ==2)) 
+    	{
+    		grupo = 5
+    	}
+
+    	senao se ((idade >= 62) e (sexo ==1))
+    	{
+    		grupo = 6 
+    	}
+
+		escolha (grupo)
+{
+		caso 1:
+		{
+		cont_jv_H = cont_jv_H+1
+		somaIdadeHJ = somaIdadeHJ + (idade)
+		somaPesoHJ = somaPesoHJ + (peso)
+		somaAlturaHJ = somaAlturaHJ + (altura)
+		pare
+		
+		}
+		
+		caso 2:
+		{
+		cont_jv_M = cont_jv_M+1
+		somaIdadeMJ = somaIdadeMJ + (idade)
+		somaPesoMJ = somaPesoMJ + (peso)
+		somaAlturaMJ = somaAlturaMJ + (altura)
+		pare
+
+		}
+	
+		caso 3:
+		{
+		cont_ad_H = cont_ad_H+1
+		somaIdadeHA = somaIdadeHA + (idade)
+		somaPesoHA = somaPesoHA + (peso)
+		somaAlturaHA = somaAlturaHA + (altura)
+		pare
+		
+		}
+
+		caso 4:
+		{
+		cont_ad_M = cont_ad_M+1
+		somaIdadeMA = somaIdadeMA + (idade)
+		somaPesoMA = somaPesoMA+ (peso)
+		somaAlturaMA = somaAlturaMA + (altura)
+		pare
+		
+		}
+
+		caso 5:
+		{
+		cont_ex_H = cont_ex_H+1
+		somaIdadeHE = somaIdadeHE + (idade)
+		somaPesoHE = somaPesoHE + (peso)
+		somaAlturaHE = somaAlturaHE + (altura)
+		pare
+		
+		}
+
+		caso 6:
+		{
+		cont_ex_M = cont_ex_M+1
+		somaIdadeME = somaIdadeME + (idade)
+		somaPesoME = somaPesoME+ (peso)
+		somaAlturaME = somaAlturaME + (altura)
+		pare
+
+		}
+
+		}
+		escreva ("\nDeseja continuar a pesquisa S (Maiusculo) para sim ou N (Maiusculo) para finalizar: ")
+		leia(fim)
+		 }
+		enquanto (fim != "S") 
+          
+	  	
+
+		contTotal = cont_jv_H + cont_jv_M + cont_ad_H + cont_ad_M + cont_ex_H + cont_ex_M
+
+
+		mIdadeHJ = somaIdadeHJ / cont_jv_H
+		mPesoHJ = somaPesoHJ / cont_jv_H
+		mAlturaHJ = somaAlturaHJ / cont_jv_H
+		mIdadeMJ = somaIdadeMJ / cont_jv_M
+		mPesoMJ = somaPesoMJ / cont_jv_M
+		mAlturaMJ = somaAlturaMJ / cont_jv_M
+		mIdadeHA = somaIdadeHA / cont_ad_H
+		mPesoHA = somaPesoHA / cont_ad_H
+		mAlturaHA = somaAlturaHA / cont_ad_H
+		mIdadeMA = somaIdadeMA / cont_ad_M
+		mPesoMA = somaPesoMA / cont_ad_M
+		mAlturaMA = somaAlturaMA / cont_ad_M
+		mIdadeHE = somaIdadeHE / cont_ex_H
+		mPesoHE = somaPesoHE / cont_ex_H
+		mAlturaHE = somaAlturaHE / cont_ex_H
+		mIdadeME = somaIdadeME / cont_ex_M
+		mPesoME = somaPesoME / cont_ex_M
+	     mAlturaME = somaAlturaME / cont_ex_M
+		
+ 		limpa()
+
+ 		escreva (contTotal, "Total de entrevistados que participaram com seus dados")
+ 		
+		escreva ("\n\nHomens Jovens\n")
+ 		escreva ("Média de Homens Jovens: ", cont_jv_H)
+ 		escreva ("\nMédia de Idade: ", mIdadeHJ)
+ 		escreva ("\nMédia de Peso: ", mPesoHJ)
+ 		escreva ("\nMédia de Altura: ", mAlturaHJ)
+
+ 		escreva ("\n\nMulheres Jovens\n")
+ 		escreva ("Média de Mulheres Jovens: ", cont_jv_M)
+ 		escreva ("\nMédia de Idade: ", mIdadeMJ)
+ 		escreva ("\nMédia de Peso: ", mPesoMJ)
+ 		escreva ("\nMédia de Altura: ", mAlturaMJ)
+
+ 		escreva ("\n\nHomens Adultos\n")
+ 		escreva ("Média de Homens Adultos: ", cont_ad_H)
+ 		escreva ("\nMédia de Idade: ", mIdadeHA)
+ 		escreva ("\nMédia de Peso: ", mPesoHA)
+ 		escreva ("\nMédia de Altura: ", mAlturaHA)
+
+ 		escreva ("\n\nMulheres Adultas\n")
+ 		escreva ("Média de Mulheres Adultas: ", cont_ad_M)
+ 		escreva ("\nMédia de Idade: ", mIdadeMA)
+ 		escreva ("\nMédia de Peso: ", mPesoMA)
+ 		escreva ("\nMédia de Altura: ", mAlturaMA)
+
+ 		escreva ("\n\nHomens Experts\n")
+ 		escreva ("Média de Homens Experts: ", cont_ex_H)
+ 		escreva ("\nMédia de Idade: ", mIdadeHE)
+ 		escreva ("\nMédia de Peso: ", mPesoHE)
+ 		escreva ("\nMédia de Altura: ", mAlturaHE)
+
+ 		escreva ("\n\nMulheres Experts\n")
+ 		escreva ("Média de Mulheres Experts: ", cont_ex_M)
+ 		escreva ("\nMédia de Idade: ", mIdadeME)
+ 		escreva ("\nMédia de Peso: ", mPesoME)
+ 		escreva ("\nMédia de Altura: ", mAlturaME)
+ 					
+			
+		
+	}
+}
