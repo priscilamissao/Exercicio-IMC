@@ -1,2 +1,4 @@
 # Progama Portugol
-Exercício IMC - Progama Portugol
+Exercício IMC 
+Ecercicios Votos 
+Exercicios Treino
