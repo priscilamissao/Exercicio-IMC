@@ -1,4 +1,4 @@
 # Progama Portugol
 Exercício IMC 
-Ecercicios Votos 
+Exercicios Votos 
 Exercicios Treino
