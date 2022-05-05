@@ -1,2 +1,2 @@
-# Exercicio-IMC
+# Progama Portugol
 Exercício IMC - Progama Portugol
