@@ -1,0 +1,73 @@
+programa
+{
+	
+	funcao inicio()
+	{
+	 inteiro candidato_a = 0
+	 inteiro candidato_b = 0
+	 inteiro brancos = 0, nulos = 0, total_de_votos = 0
+	 inteiro porcentagem_candidato_a, porcentagem_candidato_b
+	 inteiro porcentagem_brancos, porcentagem_nulos
+	 inteiro porcentagem_candidato_brancos = 0, porcentagem_candidato_nulos = 0
+	 inteiro voto
+	 
+	 
+
+	 faca
+	 {
+	 	limpa()
+	 	escreva("escolha seu candidato ou tecle zero para encerrar\n\n") 
+
+	 	escreva (" 1 -> Candidato A\n")
+          escreva (" 2 -> Candidato B\n")
+          escreva (" 3 -> Branco\n")
+
+	 	escreva("\nQualquer número diferente de 0, 1, 2, 3 anulará o seu voto\n")
+	 	escreva("Digite seu voto: ")
+		leia(voto)
+
+		limpa()
+
+		escolha (voto)
+		{
+			caso 0:
+				  escreva("Votação encerrada!\n")
+				  total_de_votos = candidato_a + candidato_b + brancos + nulos
+				  porcentagem_candidato_a =(100* candidato_a)/ total_de_votos
+				  porcentagem_candidato_b =(100* candidato_b)/ total_de_votos
+				  porcentagem_brancos =(100* brancos)/ total_de_votos
+				  porcentagem_nulos =(100* nulos)/ total_de_votos
+				  escreva("\nporcentagem candidato_a: ", porcentagem_candidato_a, "%")
+				  escreva("\nporcentagem candidato_b: ", porcentagem_candidato_b, "%")
+				  escreva("\nporcentagem brancos: ", porcentagem_brancos, "%")
+				  escreva("\nporcentagem nulos: ", porcentagem_nulos, "%")
+				  escreva("\nTotal de Votos: ", total_de_votos)
+				  se (candidato_a > candidato_b)
+				  escreva("\ncandidato_a ganhou a eleição") 
+				  se (candidato_b > candidato_a)
+				  escreva("\ncandidato_b ganhou a eleição")
+				  se (candidato_a == candidato_b)
+				  escreva("\nninguem ganhou")
+				  pare
+
+				   caso 1:
+				   candidato_a = candidato_a + 1 // soma um voto para o candidato_a
+				   pare
+				   
+				   caso 2:
+				   candidato_b = candidato_b + 1 //soma um voto para o candidato_b
+				   pare
+
+				   caso 3:
+				   brancos = brancos + 1 // soma um voto em branco 
+				   pare
+
+				   caso contrario:
+				   		nulos = nulos + 1 //soma um voto nulo
+		}		
+			   
+	}
+				 enquanto(voto != 0) 
+
+	}
+}
